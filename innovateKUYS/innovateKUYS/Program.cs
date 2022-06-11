@@ -1,4 +1,7 @@
+using innovateKUYS.Business;
+using innovateKUYS.Controllers;
 using innovateKUYS.Models.Context;
+using innovateKUYS.Models.ViewsModels;
 
 namespace innovateKUYS
 {
@@ -15,6 +18,11 @@ namespace innovateKUYS
             DatabaseInitializer databaseInitializer = new DatabaseInitializer(new DatabaseContext(),appSettings);
             databaseInitializer.Seed();
 
+            //builder.Services.AddTransient<StudentService,StudentController>();
+            //builder.Services.AddIdentity<StudentService, StudentController>().AddEntityFrameworkStores
+
+            //builder.Services.AddDbContext<DatabaseContext>();
+            builder.Services.AddSingleton<StudentService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
