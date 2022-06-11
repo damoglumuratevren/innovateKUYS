@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 $(document).ready(function () {
-    $('#student').DataTable({
+    $('#StudentDetay').DataTable({
         columnDefs: [
             {
                 targets: [0],
