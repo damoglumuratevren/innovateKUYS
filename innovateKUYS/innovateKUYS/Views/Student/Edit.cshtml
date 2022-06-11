@@ -1,59 +1,64 @@
-﻿@{
+﻿@using innovateKUYS.Models.ViewsModels.StudentVM
+@model StudentEditViewModel
+@{
     ViewData["Title"] = "Öğrenciler Güncelle";
 }
 <div class="row mb-4">
     <div class="col">
-        <a class="btn btn-primary btn-sm" asp-action="Create"><i class="fa fa-plus mr-2"></i>Öğrenci Ekle</a>
+    @*    <a class="btn btn-primary btn-sm" asp-action="Create"><i class="fa fa-plus mr-2"></i>Öğrenci Ekle</a>*@
     </div>
 </div>
 
 <div class="row mb-4">
     <div class="col">
-      <form>
+      <form method="post">
           <div class="from-group">
               <label for="FirstName" class="font-weight-bold small">Öğrenci Ad</label>
-              <input type="text" class="form-control" id="FirstName" placeholder="Öğrenci Adı"/>
+              <input type="text" class="form-control" id="FirstName" placeholder="Öğrenci Adı" asp-for="FirstName"/>
           </div>
           <div class="from-group">
               <label for="LastName" class="font-weight-bold small">Öğrenci Soyad</label>
-              <input type="text" class="form-control" id="LastName" placeholder="Öğrenci Soyadı"/>
+              <input type="text" class="form-control" id="LastName" placeholder="Öğrenci Soyadı" asp-for="LastName"/>
           </div>
            <div class="from-group">
               <label for="StudentCode" class="font-weight-bold small">Öğrenci Numarası</label>
-              <input type="text" class="form-control" id="StudentCode" placeholder="Öğrenci numarası"/>
+              <input type="text" class="form-control" id="StudentCode" placeholder="Öğrenci numarası"  asp-for="StudentCode"/>
           </div>
           <div class="from-group">
               <label for="Email" class="font-weight-bold small">Öğrenci email</label>
-              <input type="text" class="form-control" id="Email" placeholder="Öğrenci email"/>
+              <input type="text" class="form-control" id="Email" placeholder="Öğrenci email"  asp-for="Email"/>
           </div>
 
           <div class="from-group">
               <label for="PhoneNumber" class="font-weight-bold small">Öğrenci telefon</label>
-              <input type="text" class="form-control" id="PhoneNumber" placeholder="Öğrenci telefon"/>
+              <input type="text" class="form-control" id="PhoneNumber" placeholder="Öğrenci telefon" asp-for="PhoneNumber"/>
           </div>
 
           <div class="from-group">
               <label for="RegistrationTime" class="font-weight-bold small">Kayıt zamanı</label>
-              <input type="date" class="form-control" id="RegistrationTime" placeholder="Kayıt zamanı"/>
+              <input type="date" class="form-control" id="RegistrationTime" placeholder="Kayıt zamanı"  asp-for="RegistrationTime"/>
           </div>
 
-          <div class="from-group">
+@*          <div class="from-group">
               <label for="Password" class="font-weight-bold small">Öğrenci şifre</label>
-              <input type="password" class="form-control" id="Password" placeholder="Öğrenci şifre"/>
+              <input type="password" class="form-control" id="Password" placeholder="Öğrenci şifre" />
           </div>
           <div class="from-group">
               <label for="RePassword" class="font-weight-bold small">Öğrenci şifre tekrar</label>
               <input type="password" class="form-control" id="RePassword" placeholder="Öğrenci şifre tekrar"/>
+          </div>*@
+           <div class="from-group">
+              <label for="GraduationTime" class="font-weight-bold small">Kayıt zamanı</label>
+              <input type="date" class="form-control" id="GraduationTime" placeholder="Kayıt zamanı"  asp-for="GraduationTime"/>
           </div>
-
           
           <div class="from-group form-check">
               <label for="IsGraduate" class="font-weight-bold small">Mezun oldu mu?</label>
-              <input type="checkbox" class="form-check-input" id="IsGraduate" />
+              <input type="checkbox" class="form-check-input" id="IsGraduate"   asp-for="IsGraduate"/>
           </div>
                    <div class="from-group form-check">
               <label for="IsActive" class="font-weight-bold small">Aktif mi?</label>
-              <input type="checkbox" class="form-check-input" id="IsActive" />
+              <input type="checkbox" class="form-check-input" id="IsActive" asp-for="IsActive" />
           </div>
           <br />
            <div>

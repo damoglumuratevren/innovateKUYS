@@ -1,0 +1,30 @@
+﻿@model Student
+ <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">@Model.FirstName @Model.LastName</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <dl class="row">
+
+            <dt class="col-4">Öprenci Id</dt>
+            <dd class="col-8">@Model.StudentCode</dd>
+
+                       <dt class="col-4">Öprenci Email</dt>
+            <dd class="col-8">@Model.Email</dd>
+
+
+                       <dt class="col-4">Öprenci telefonu</dt>
+            <dd class="col-8">@Model.PhoneNumber</dd>
+
+
+                       <dt class="col-4">Öprenci kayıt zamanı</dt>
+            <dd class="col-8">@Model.RegistrationTime</dd>
+
+                       <dt class="col-4">Kaydı Yapan</dt>
+            <dd class="col-8">@Model.CreatedUser</dd>
+
+
+
+
+        </dl>
+      </div>

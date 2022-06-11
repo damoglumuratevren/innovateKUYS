@@ -1,4 +1,4 @@
-using innovateKUYS.Business;
+using innovateKUYS.Business.StudentBs;
 using innovateKUYS.Controllers;
 using innovateKUYS.Models.Context;
 using innovateKUYS.Models.ViewsModels;
@@ -18,9 +18,7 @@ namespace innovateKUYS
             DatabaseInitializer databaseInitializer = new DatabaseInitializer(new DatabaseContext(),appSettings);
             databaseInitializer.Seed();
 
-            //builder.Services.AddTransient<StudentService,StudentController>();
-            //builder.Services.AddIdentity<StudentService, StudentController>().AddEntityFrameworkStores
-
+           
             //builder.Services.AddDbContext<DatabaseContext>();
             builder.Services.AddSingleton<StudentService>();
             var app = builder.Build();
@@ -38,7 +36,7 @@ namespace innovateKUYS
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Student}/{action=Index}/{id?}");
 
             app.Run();
             

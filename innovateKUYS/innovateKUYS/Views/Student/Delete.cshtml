@@ -1,4 +1,5 @@
-﻿@*
+﻿@model Student
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -6,8 +7,10 @@
 <div class="row mb-4">
     <div class="col-4">
         <dl class="row">
-            <dt class="col-4">Öğrenci Ad-Soyad</dt>
-            <dd class="col-8">Öğrenci Ad-Soyad</dd>
+            <dt class="col-4">@Html.DisplayNameFor(m=>m.FirstName) @Html.DisplayNameFor(m=>m.LastName) </dt>
+            <dd class="col-8">@Model.FirstName @Model.LastName</dd>
+             <dt class="col-4">@Html.DisplayNameFor(m=>m.StudentCode)</dt>
+            <dd class="col-8">@Model.StudentCode</dd>
         </dl>
 
     </div>
@@ -15,7 +18,7 @@
 
 <div class="row mb-4">
     <div class="col">
-        <form>
+        <form method="post">
             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trash mr-2"></i>Ögrenci sil</button>
         </form>
     </div>
