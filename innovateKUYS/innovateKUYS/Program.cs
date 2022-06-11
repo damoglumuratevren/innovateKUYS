@@ -1,3 +1,4 @@
+using innovateKUYS.Business.CourseStudentBS;
 using innovateKUYS.Business.StudentBs;
 using innovateKUYS.Controllers;
 using innovateKUYS.Models.Context;
@@ -18,9 +19,10 @@ namespace innovateKUYS
             DatabaseInitializer databaseInitializer = new DatabaseInitializer(new DatabaseContext(),appSettings);
             databaseInitializer.Seed();
 
-           
+
             //builder.Services.AddDbContext<DatabaseContext>();
             builder.Services.AddSingleton<StudentService>();
+            builder.Services.AddSingleton<CourseStudentService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
