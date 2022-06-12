@@ -103,13 +103,19 @@ namespace innovateKUYS.Controllers
         [ActionName("Delete")]
         public IActionResult DeleteConfirm(int id)
         {
-            ServiceResult<Student> result = _studentService.Find(id);
-            if (result.Data == null)
+            ServiceResult<object> result = _studentService.Remove(id);
+
+            if (!result.IsError)
             {
                 return RedirectToAction(nameof(Index));
 
             }
-            return View(result.Data);
+            foreach (string item in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, item);
+            }
+
+            return View(_studentService.Find(id).Data);
         }
 
 

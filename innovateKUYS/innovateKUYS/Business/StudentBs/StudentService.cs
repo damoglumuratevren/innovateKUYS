@@ -96,5 +96,20 @@ namespace innovateKUYS.Business.StudentBs
             }
             return result;
         }
+
+        public ServiceResult<object> Remove(int id)
+        {
+
+            ServiceResult<object> result=new ServiceResult<object>();
+
+            Student student= _db.Students.Find(id);
+            if (student != null)
+            {
+                _db.Students.Remove(student);
+                if (_db.SaveChanges() == 0)
+                    result.AddError("Silme işlem yapılamadı.");
+            }
+            return result;
+        }
     }
 }
